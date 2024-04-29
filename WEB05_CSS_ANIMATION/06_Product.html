@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_Product.html</title>
+    <style type="text/css">
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 1000px;
+            height: 200px;
+            border: 1px solid red;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 1px dotted black;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box:hover .caption {
+            transition: 1s;
+            transform: translateY(-200px);
+        }
+
+        .caption {
+            background: black;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            top: 200px;
+            opacity: 0.6;
+        }
+
+        .caption h1, .caption p {
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="/images/prod1.jpg" alt="">
+            <div class="caption">
+                <h1>상품 1</h1>
+                <p>상품1: 설명 텍스트</p>
+                <p>가격 : 12,121원</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="/images/prod2.jpg" alt="">
+            <div class="caption">
+                <h1>상품 2</h1>
+                <p>상품2: 설명 텍스트</p>
+                <p>가격 : 12,122원</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="/images/prod3.jpg" alt="">
+            <div class="caption">
+                <h1>상품 3</h1>
+                <p>상품3: 설명 텍스트</p>
+                <p>가격 : 12,123원</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

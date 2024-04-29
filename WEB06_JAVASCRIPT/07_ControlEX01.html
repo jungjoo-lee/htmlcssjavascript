@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_Control.html</title>
+    <script>
+        var m = Number(prompt("월을 입력하세요"));
+        var d = Number(prompt("일을 입력하세요"));
+
+        var days = 0;
+
+        if (m == 1) {days = 0;}
+        else if (m == 2) {days = 31;}
+        else if (m == 3) {days = 31+29;}
+        else if (m == 4) {days = 31+29+31;}
+        else if (m == 5) {days = 31+29+31+30;}
+        else if (m == 6) {days = 31+29+31+30+31;}
+        else if (m == 7) {days = 31+29+31+30+31+30;}
+        else if (m == 8) {days = 31+29+31+30+31+30+31;}
+        else if (m == 9) {days = 31+29+31+30+31+30+31+31;}
+        else if (m == 10) {days = 31+29+31+30+31+30+31+31+30;}
+        else if (m == 11) {days = 31+29+31+30+31+30+31+31+30+31;}
+        else if (m == 12) {days = 31+29+31+30+31+30+31+31+30+31+30;}
+
+        days += d;
+
+        var weekday = days % 7;
+
+        if(weekday == 1) {alert("월");}
+        else if(weekday == 2) {alert("화");}
+        else if(weekday == 3) {alert("수");}
+        else if(weekday == 4) {alert("목");}
+        else if(weekday == 5) {alert("금");}
+        else if(weekday == 6) {alert("토");}
+        else if(weekday == 0) {alert("일");}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

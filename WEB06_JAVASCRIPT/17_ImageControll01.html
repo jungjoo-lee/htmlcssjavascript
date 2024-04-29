@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_ImageControll01.html</title>
+    <script>
+        function mouseover1 () {
+            document.getElementById("img1").src = "images/3.jpg"
+        }
+
+        function mouseover2 () {
+            document.getElementById("img2").src = "images/4.jpg"
+        }
+
+        function mouseout1() {
+            document.getElementById("img1").src = "images/1.jpg"
+        }
+
+        function mouseout2() {
+            document.getElementById("img2").src = "images/2.jpg"
+        }
+    </script>
+</head>
+<body>
+    <img src="images/1.jpg" id="img1" onmouseover="mouseover1()" onmouseout="mouseout1()"/>
+    <img src="images/2.jpg" id="img2" onmouseover="mouseover2()" onmouseout="mouseout2()"/>
+    <!-- 
+        1. 1.jpg에 마우스를 올리면 3.jpg로 변환, 2.jpg에 마우스를 올리면 4.jpg로변환
+        2. 마우스가 빠져나가면 다시 원래대로 변환
+     -->
+</body>
+</html>

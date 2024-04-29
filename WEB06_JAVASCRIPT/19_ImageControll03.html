@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19_ImageControll03.html</title>
+    <script>
+        // 이미지를 클릭할 때마다 1->2->3->4... 이미지 번호가 변하도록 코딩하세요
+        // 이미지는 10.jpg까지 있으면 10번 다음으로 다시 1번으로 되게 설정합니다.
+        var num = 1;
+
+        function changeImg() {
+            document.getElementById("img1").src = "images/" + num++ + ".jpg";
+
+            if (num > 10)
+                num = 1;
+        }
+    </script>
+</head>
+<body>
+    <img src="images/1.jpg" id="img1" onclick="changeImg()">
+</body>
+</html>

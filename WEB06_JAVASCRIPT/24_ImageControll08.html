@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24_ImageControll08.html</title>
+    <style>
+        #view {
+            position: relative;
+            width: 170px;
+            height: 255px;
+        }
+
+        #view img {
+            position: absolute;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+<body onload="start()">
+    <div id="view" onmouseover="stop()" onmouseout="start()">
+        <img src="images/1.jpg"><img src="images/2.jpg"><img src="images/3.jpg"><img src="images/4.jpg"><img src="images/5.jpg"><img src="images/6.jpg"><img src="images/7.jpg"><img src="images/8.jpg"><img src="images/9.jpg"><img src="images/10.jpg">
+    </div>
+    <script>
+        var num = 0;
+        let timer;
+
+        function stop() {
+            window.clearInterval(timer);
+        }
+
+        function start() {
+            timer = window.setInterval(() => {
+                if (num > 9)
+                    num = 0;
+
+                for (var i = 0; i < 10; i++) {
+                    document.getElementsByTagName("img").item(i).style.opacity = '0';
+                }
+                document.getElementsByTagName("img").item(num++).style.opacity = '1';
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
