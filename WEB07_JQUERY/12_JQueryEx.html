@@ -29,11 +29,12 @@
             position: absolute;
             width: 1300px;
             height: 700px;
-            text-align: center;
         }
 
-        .contetns {
-            
+        .contents {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         #content1 {
@@ -42,30 +43,25 @@
 
         #content2 {
             background: #55ebd1;
-            display: none;
         }
 
         #content3 {
             background: #4fbde3;
-            display: none;
         }
 
         #content4 {
             background: #6ebe6d;
-            display: none;
         }
 
         #content5 {
             background: #95a096;
-            display: none;
         }
 
         #content6 {
             background: #ed8d2a;
-            display: none;
         }
     </style>
-    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script type="text/javascript">
         $(() => {
             $('#tabs div:eq(0)').css('background', '#ebaa55');
@@ -75,12 +71,18 @@
             $('#tabs div:eq(4)').css('background', '#95a096');
             $('#tabs div:eq(5)').css('background', '#ed8d2a');
             
-            var imgNum = 0;
-            $('#tabs:eq(' + i + ')').click(() => {
-                for (var i = 0; i < 6; i++)
-                    $('#content' + (i + 1)).show();
-                $('#content' + (imgNum++)).hide();
-            })
+            for (var i = 2; i < 7; i++) {
+                $('#content' + i).hide();
+            }
+            
+            for (var i = 0; i < 6; i++) {
+                ((e) => {
+                    $('#tabs div:eq(' + e + ')').click(() => {
+                        $('.contents').hide();
+                        $('#content' + (e + 1)).show();            
+                    });
+                })(i);
+            }
         })
     </script>
 </head>
