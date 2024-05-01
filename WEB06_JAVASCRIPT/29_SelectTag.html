@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29_SelectTag.html</title>
+    <style>
+        #title {
+            position: relative;
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 120%;
+            font-weight: bold;
+            border: 1px solid gray;
+        }
+
+        #num {
+            position: absolute;
+            width: 120px;
+            height: 30px;
+        }
+
+        #arrow {
+            position: absolute;
+            width: 25px;
+            height: 30px;
+            background-image: url(images/ico_movie_171115.png);
+            background-position: -275px -320px;
+            top: 0;
+            right: 0;
+        }
+
+        #dropMenu {
+            position: absolute;
+            visibility: hidden;
+            top: 30px;
+            background: white;
+            width: 300px;
+            height: 250px;
+            box-shadow: 2px 2px 5px gray;
+            overflow: scroll;
+        }
+
+        #dropMenu div {
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            font-weight: bold;
+        }
+
+        #dropMenu div:hover {
+            background: #888888;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="title" onclick="clickTitle()">
+        <div id="num">+82</div>
+        <div id="arrow"></div>
+        <div id="dropMenu">
+            <div>+1 &nbsp;&nbsp;&nbsp; Canada</div>
+            <div>+63 &nbsp;&nbsp;&nbsp; Philippines</div>
+            <div>+62 &nbsp;&nbsp;&nbsp; Indodesia</div>
+            <div>+84 &nbsp;&nbsp;&nbsp; Vietnam</div>
+            <div>+55 &nbsp;&nbsp;&nbsp; Brazil</div>
+            <div>+85 &nbsp;&nbsp;&nbsp; HongKong</div>
+            <div>+82 &nbsp;&nbsp;&nbsp; Korea</div>
+        </div>
+    </div>
+    <hr/>
+    <select name="" id="">
+        <option value="">대한민국 +82</option>
+        <option value="">그리스 +30</option>
+        <option value="">뉴질랜드 +64</option>
+        <option value="">프랑스 +33</option>
+    </select>
+
+    <script>
+        let dropFlag = false;
+        var menus = document.querySelectorAll("#dropMenu div");
+        var nums = ['+1', '+63', '+62', '+84', '+55', '+85', '+82'];
+
+        function clickTitle() {
+            if (dropFlag == true) {
+                dropFlag = false;
+                document.getElementById('dropMenu').style.visibility = 'hidden';
+            } else {
+                dropFlag = true;
+                document.getElementById('dropMenu').style.visibility = 'visible';
+            }
+        }
+
+        for(var i = 0; i < menus.length; i++) {
+            menus[i].addEventListener("click", (function(num) {
+                return function() {
+                    document.getElementById('num').innerHTML = num;
+                };
+            }) (nums[i]));
+        }
+    </script>
+</body>
+</html>

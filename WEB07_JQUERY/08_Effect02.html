@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_Effect02.html</title>
+    <style>
+        div {
+            background: #3d9a44;
+            margin: 3px;
+            width: 80px;
+            height: 100px;
+            float: left;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(() => {
+            $('#slideUp').click(() => {
+                $('div').slideUp(() => {
+                    $('div').css('background', 'blue');
+                });
+            })
+
+            $('#slideDown').click(() => {
+                $('div').slideDown(() => {
+                    $('div').css('background', 'red');
+                });
+            })
+
+            $('#slideToggle').click(() => {
+                $('div').slideToggle(() => {
+                    $('div').slideToggle();
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="slideUp">slideUp</button>
+    <button id="slideDown">slideDown</button>
+    <button id="slideToggle">slideToggle</button>
+    <br/>
+    <br/>
+    <br/>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
