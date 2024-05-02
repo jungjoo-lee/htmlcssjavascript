@@ -1,0 +1,12 @@
+body {
+    background-color: darkgray;
+}
+
+.view {
+    width: 600px;
+    margin: 0 auto;
+}
+
+img {
+    border-radius: 20px;
+}
