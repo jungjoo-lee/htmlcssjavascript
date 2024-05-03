@@ -7,7 +7,3 @@ $(() => {
         $(e.currentTarget).addClass('selected');
     });
 });
-
-
-
-        

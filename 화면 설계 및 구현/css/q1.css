@@ -1,0 +1,77 @@
+#view {
+    position: relative;
+    width: 1000px;
+    height: 635px;
+    overflow: hidden;
+}
+
+#imgs {
+    position: absolute;
+    width: 6000px;
+    height: 550px;
+    left: 0;
+    top: 0;
+    border: 1px solid red;
+}
+
+img {
+    width: 1000px;
+    height: 550px;
+}
+
+#count {
+    position: absolute;
+    color: white;
+    z-index: 1;
+    font-size: 20px;
+    right: 5px;
+    top: 10px;
+}
+
+#remote {
+    position: absolute;
+    width: 176px;
+    height: 75px;
+    top: 100;
+}
+
+#remote div {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    background: white;
+    border-radius: 10px;
+    float: left;
+    margin: 18px 4px;
+    cursor: pointer;;
+}
+
+#remote .selected {
+    width: 50px;
+}
+
+#sub {
+    position: absolute;
+    bottom: 0;
+    width: 1000px;
+    background-color: black;
+    color: white;
+    opacity: 0.6;
+    height: 85px;
+}
+
+.content {
+    position: absolute;
+    display: none;
+    
+}
+
+.content .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.content .text {
+    width: 750px;
+}
